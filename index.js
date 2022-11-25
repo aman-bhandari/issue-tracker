@@ -7,7 +7,7 @@ const db = require('./config/mongoose');
 // const sassMiddleWare = require('node-sass-middleware');
 app.use(express.urlencoded());
 app.use('/', require('./routes'));
-port = 8000;
+port = process.env.PORT || 8000;
 const path = require('path');
 // node-sass-middleware configuration
 // app.use(
