@@ -1,0 +1,167 @@
+
+<div>
+  <div class="" id="reportButton">
+    <a class="reportissuecl navbar-brand" href="/issue/reportIssue/<%= project._id %>"
+      >Report Issue</a
+    >
+  </div>
+  <% if(showProjectDet) {%>
+  <div class="row ml-5 mt-4">
+   
+  <div class="col-1 totalBugs m-1">
+    
+    <p><%= issue.length %></p>
+    
+    <p>open bugs</p>
+</div>
+<%}%>
+
+</div>
+<% if(issue.length==0 && showProjectDet) {%>
+<div class="centerthisissue"><h1>No Bugs related to this Project !! if know please raise</h1></div>
+  <% } %>
+<% if(issue.length>0) {%>
+  
+
+  <div class="filters">
+  
+    <div class="filter-labels formContainer">
+      <form action="/issue/filterissue" method="post">
+        <select name="label1">
+          <% for( op of labelsonCurr ) {%>
+          <option value="<%= op %>"><%= op %></option>
+  
+          <%}%>
+        </select>
+        <select name="label2">
+          <% for( op of labelsonCurr ) {%>
+          <option><%= op %></option>
+  
+          <%}%>
+        </select>
+        <!-- <input
+          type="text"
+          placeholder="Search Author"
+          class="form-fields"
+          name="searchAuthor"
+        /> -->
+        <input
+          type="hidden"
+          name="projectId"
+          class="form-fields"
+          value="<%= project._id %>"
+        />
+        <input type="submit" value="search" class="form-fields" />
+      </form>
+      <form action="/issue/filterissue" method="post" >
+        <input
+        type="text"
+        placeholder="Search Author"
+        class="form-fields"
+        name="searchAuthor"
+      />
+      <input
+        type="hidden"
+        name="projectId"
+        class="form-fields"
+        value="<%= project._id %>"
+      />
+      <input type="submit" value="search" class="form-fields" />
+      </form>
+    </div>
+
+
+    <div class="formContainer">
+      <!-- form for search title and description -->
+      <form id="searchAuthor" action="/issue/filterissue" method="post">
+        <input
+          class="form-fields"
+          type="text"
+          name="serchBtTitNDesc"
+          placeholder="Enter title or description to be searched"
+        />
+        <input
+          type="hidden"
+          value="<%= project._id %>"
+          name="projectId"
+          class="form-fields"
+        />
+        <input type="submit" value="Search" class="form-fields" />
+      </form>
+    </div>
+  </div>
+  
+  
+  <div id="projectDetSection">
+    <% if(showProjectDet) {%>
+    
+    <div class="projectDetail">
+      <div class="ProjectDetAndDesription">
+      <p class=""> <h2 class="">Project Name - <%= project.projectname%></h2> </p>
+      <p class=""><h3 class=""> Author Name - <%= project.author%> </h3></p>
+      <p class=""> <h4 class="" > Description - <%= project.description%> </h4> </p>
+    </div>
+      <div class="issuebox">
+       
+        <table class="table">
+          <thead>
+            <tr>
+              
+              <th scope="col">issue Title</th>
+              <th scope="col">description</th>
+              <th scope="col">Author</th>
+            </tr>
+          </thead>
+        <% for(isdec of issue ){ %>
+          <tr>
+            
+            <td><%= isdec.title %></td>
+            <td><%= isdec.description %></td>
+            <td><%= isdec.author %></td>
+          </tr>
+        <%}%>
+         
+        </tbody>
+      </table>
+        
+        </div>
+      </div>
+     
+    </div>
+    <%} %>
+
+    <% } %> <% if(!showProjectDet) {%>
+      <div class="sear">
+        <h3>Search Result</h3>
+      </div>
+      <table class="table">
+        <thead>
+          <tr>
+            
+            <th scope="col">issue Title</th>
+            <th scope="col">description</th>
+            <th scope="col">Author</th>
+            <th scope="col">Label</th>
+          </tr>
+        </thead>
+      
+      <% for(i of filterdata) {%>
+        <tr>
+          
+          <td><%= i.title %></td>
+          <td><%= i.description %></td>
+          <td><%= i.labels %></td>
+          <td><%= i.author %></td>
+
+        </tr>
+
+    <%}%>
+  </tbody>
+</table>
+    <!--  -->
+    <%}%>
+    <script src="/js/searchAuthor.js"></script>
+  </div>
+  
+
+</div>

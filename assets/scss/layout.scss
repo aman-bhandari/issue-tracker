@@ -1,0 +1,170 @@
+.heading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-around;
+}
+
+body {
+  background-color: white;
+
+  table,
+  th,
+  td {}
+
+  td {
+    border-bottom: 1px solid black;
+  }
+
+  .projectDatalist {
+    text-align: center;
+  }
+
+  .descAndedit {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .divTextCent {
+    text-align: center;
+  }
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+#createProject {
+  text-decoration: none;
+  border: 1px solid black;
+  background: cornflowerblue;
+  color: white;
+
+  border-radius: 6px;
+}
+
+.formContainer {
+  text-align: center;
+  position: relative;
+  top: 7%;
+  left: 27%;
+  width: 40%;
+
+  .form-fields {
+    width: 100%;
+    margin-top: 15px;
+    height: 35px;
+  }
+}
+
+#left {
+  width: 20%;
+  display: inline-block;
+  height: 400px;
+  background-color: aqua;
+
+  // transition: ;
+  .leftAsideSec {
+    border: 1px solid red;
+
+    width: 100%;
+  }
+}
+
+#right {
+  width: 70%;
+  display: inline-block;
+  vertical-align: top;
+}
+
+#projectDetSection {
+  display: inline-block;
+  vertical-align: top;
+  width: 50%;
+
+  .descBox {
+    border: 1px solid red;
+    width: 100%;
+    text-align: center;
+    margin-bottom: -13px;
+    height: 25px;
+    border: 1px solid red;
+    text-align: center;
+  }
+
+  // .reportissuecl {
+  //   text-decoration: none;
+  //   color: white;
+  //   height: 30px;
+  //   width: 40px;
+  //   background-color: red;
+  // }
+}
+
+.issusList {
+  display: flex;
+  justify-content: space-between;
+}
+
+.dispIssue {
+  height: 25px;
+  border-bottom: 1px solid red;
+  text-align: center;
+}
+
+.issuebox {
+  margin-top: 35px;
+}
+
+.issuetitelsArea {
+  display: flex;
+}
+
+.totalBugs {
+  // height: 71px;
+  // width: 94px;
+  border: 1px solid red;
+  border-radius: 10px;
+  background-color: red;
+  text-align: center;
+  // position: relative;
+  //left: 25%;
+  color: white;
+}
+
+#reportButton {
+  background-color: skyblue;
+  border: 1px solid red;
+  border-radius: 10px;
+  width: 117px;
+  text-align: center;
+  position: relative;
+  left: 90%;
+}
+
+.filters {
+  /* position: relative; */
+  width: 40%;
+  display: inline-block;
+  // border-right: 1px solid green;
+}
+
+.ProjectDetAndDesription {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  border-bottom: 1px solid green;
+}
+
+.sear {
+  text-align: center;
+}
+
+.centerthisissue {
+  text-align: center;
+}
+
+.borderbottom {
+  border-bottom: 1px solid green;
+}
